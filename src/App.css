@@ -1,0 +1,106 @@
+/*.App {*/
+  /*text-align: center;*/
+/*}*/
+
+/*.App-logo {*/
+  /*animation: App-logo-spin infinite 20s linear;*/
+  /*height: 80px;*/
+/*}*/
+
+/*.App-header {*/
+  /*background-color: #222;*/
+  /*height: 150px;*/
+  /*padding: 20px;*/
+  /*color: white;*/
+/*}*/
+
+/*.App-title {*/
+  /*font-size: 1.5em;*/
+/*}*/
+
+/*.App-intro {*/
+  /*font-size: large;*/
+/*}*/
+
+/*@keyframes App-logo-spin {*/
+  /*from { transform: rotate(0deg); }*/
+  /*to { transform: rotate(360deg); }*/
+/*}*/
+/*@media screen and (max-width: 600px) {*/
+    /*.at-large-logo img {*/
+        /*transform: scale(.8);*/
+    /*}*/
+/*}*/
+.at-large-logo {
+    padding: 20px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@media screen and (max-width: 800px) {
+    .at-large-logo img {
+        transform: scale(.9);
+    }
+}@media screen and (max-width: 600px) {
+    .at-large-logo img {
+        transform: scale(.7);
+    }
+}
+@media screen and (max-width: 400px) {
+    .at-large-logo img {
+        transform: scale(.5);
+    }
+}
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+.navbar-collapse {
+    width: 100vw;
+    backgound: #212529;
+}
+
+.navbar-brand {
+    padding-left: 40px;
+}
+
+
+/*Font-awesome integration*/
+@import url("https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+/*Google font integration*/
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+#contact{
+    background-color:#f1f1f1;
+    font-family: 'Roboto', sans-serif;
+}
+
+#contact .well{
+    margin-top:30px;
+    border-radius:0;
+}
+
+#contact .form-control{
+    border-radius: 0;
+    border:2px solid #1e1e1e;
+}
+
+#contact button{
+    border-radius:0;
+    border:2px solid #1e1e1e;
+}
+
+#contact .row{
+    margin-bottom:30px;
+}
+
+@media (max-width: 768px) {
+    #contact iframe {
+        margin-bottom: 15px;
+    }
+    .navbar-brand {
+        padding-left: unset;
+    }
+}
