@@ -1,7 +1,7 @@
 .business-hours {
     background: #222;
     padding: 40px 14px;
-    margin-top: -15px;
+    /*margin-top: -15px;*/
     position: relative;
 }
 .business-hours:before{

@@ -1,0 +1,29 @@
+
+
+@media (min-width: 1200px) {
+    .container {
+        width: 75% !important;
+        max-width: 1900px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .beers {
+        display: none;
+    }
+    .beers h5 {
+        font-size: 22px;
+    }
+    .beers h6 {
+        font-size: 20px;
+    }
+    .beers p {
+        font-size: 18px;
+    }
+    div.beers:first-of-type {
+        display: block
+    }
+    .business-hours:before {
+        width: 0px;
+    }
+}

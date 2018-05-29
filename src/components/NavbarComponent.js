@@ -42,31 +42,20 @@ class NavbarComponent extends Component {
                 style={{ width: "100%", height: 50, borderBottom: "2px #333 solid" }}
                 expand="lg"
             >
-                <NavbarBrand className="navBrand" href="/">
-                    At Large Brewing
+                <NavbarBrand className="navBrand" disabled href="/">
+                    <span style={{fontFamily: ""}}>At Large Brewing</span>
                 </NavbarBrand>
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="/components/">Components</NavLink>
+                            <NavLink disabled href="/beers">Beers</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="https://github.com/reactstrap/reactstrap">
-                                GitHub
+                            <NavLink disabled href="/about-us">
+                                About Us
                             </NavLink>
                         </NavItem>
-                        <UncontrolledDropdown nav inNavbar>
-                            <DropdownToggle nav caret>
-                                Options
-                            </DropdownToggle>
-                            <DropdownMenu right>
-                                <DropdownItem>Option 1</DropdownItem>
-                                <DropdownItem>Option 2</DropdownItem>
-                                <DropdownItem divider />
-                                <DropdownItem>Reset</DropdownItem>
-                            </DropdownMenu>
-                        </UncontrolledDropdown>
                     </Nav>
                 </Collapse>
             </Navbar>

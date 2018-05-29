@@ -3,16 +3,13 @@ import {
   Card,
   CardBody,
   CardImg,
-  CardSubtitle,
-  CardText,
   Col,
   CardTitle,
-  Button,
   ListGroup,
   ListGroupItem
 } from "reactstrap";
 import PropTypes from "prop-types";
-import { getAboutUsBody, getImage } from "../helpers/Contentful";
+import { Parallax, Background } from "react-parallax";
 
 class AboutUsComponent extends Component {
   constructor(props) {
@@ -26,41 +23,50 @@ class AboutUsComponent extends Component {
     };
   }
   static defaultProps = {
-    cardTitle: "Title",
-    cardBody: ["body stuff 1", "body stuff 2"],
+    colWidth: 12,
+    cardTitle: "",
+    cardBody: [""],
     cardImageUrl: ""
   };
-  async componentWillMount() {
-    const image = await getImage(this.props.cardImageUrl);
-    const aboutUs = await getAboutUsBody(this.props.aboutUs);
-    await this.setState({
-      aboutUs: {
-          title: aboutUs.aboutUs,
-          body: aboutUs.bodyContentList
-      },
-      cardBody: this.props.cardBody,
-      cardImageUrl: image
-    });
-  }
 
   render() {
     return (
-      <Col xl="6">
-        <Card style={{ backgroundColor: "#222", borderColor: "#333" }} body>
-          <CardImg top width="100%" src={this.state.cardImageUrl} />
-          <CardBody className="text-white">
-            <CardTitle>{this.state.aboutUs.title}</CardTitle>
-            <ListGroup>
-              {this.state.aboutUs.body.map((content, index) => {
+      <Col xl={this.props.colWidth} style={{ paddingTop: 12 }}>
+        <Card
+          style={{
+            backgroundColor: "#222",
+            borderColor: "#333",
+            boxShadow: " 5px 11px 35px 7px rgba(0,0,0,0.75)",
+            zIndex: 2
+          }}
+          body
+        >
+          <CardBody className="text-white p-0 pt-1">
+            <CardTitle style={{ fontFamily: "Special Elite", fontSize: 40 }} className="text-center mb-4">
+                {this.props.cardTitle}
+            </CardTitle>
+            <CardImg top width="100%" src={this.props.cardImageUrl} />
+            <ListGroup
+              flush
+              tag={"ul"}
+              style={{ content: "e080", listStyle: "circle" }}
+            >
+              {this.props.cardBody.map((content, index) => {
                 return (
                   <ListGroupItem
                     active
                     tag="li"
                     action
-                    color="secondary"
+                    color="dark"
                     key={index}
+                    className={"px-1"}
                   >
-                    {content}
+                    <li
+                      className={"ml-3 text-white"}
+                      style={{  fontFamily: "Courier New" }}
+                    >
+                      {content}
+                    </li>
                   </ListGroupItem>
                 );
               })}
@@ -72,6 +78,11 @@ class AboutUsComponent extends Component {
   }
 }
 
-AboutUsComponent.propTypes = {};
+AboutUsComponent.propTypes = {
+  colWidth: PropTypes.number,
+  cardTitle: PropTypes.string,
+  cardBody: PropTypes.arrayOf(PropTypes.string),
+  cardImageUrl: PropTypes.string
+};
 
 export default AboutUsComponent;

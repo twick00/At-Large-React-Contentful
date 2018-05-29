@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./ComponentCSS/HoursOfOperation.css";
+import "./componentCSS/HoursOfOperation.css";
 import {getHours} from "../helpers/Contentful";
 
 
@@ -44,7 +44,7 @@ class HoursOfOperationComponent extends Component {
 
   render() {
     return (
-        <div className={`col-${this.props.resizeValue}-${this.props.colWidth}`}>
+        <div style={{marginBottom: 12, zIndex: 2}} className={`mt-4 col-${this.props.resizeValue}-${this.props.colWidth}`}>
           <div className="business-hours">
             <h2 className="title">Opening Hours</h2>
             <ul className="list-unstyled opening-hours">

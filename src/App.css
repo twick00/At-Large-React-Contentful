@@ -104,3 +104,8 @@ body {
         padding-left: unset;
     }
 }
+@media (max-width: 991px) {
+    .about-us-container {
+        padding-top: 30px;
+    }
+}
