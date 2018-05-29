@@ -2,9 +2,9 @@ import { createClient } from "contentful";
 import _ from "lodash";
 
 const client = createClient({
-  space: "usqyvc8xhy60",
+  space: "XXXXXXXXXXXX",
   accessToken:
-    "54f1c92b86f652891b38099ebeab464a91554ac7c25b3718337838b4a6958f10"
+    "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
 });
 const hoursEntry = "5THCDjVqzCooc00aiYiwOg";
 export async function getHours() {
